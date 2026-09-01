@@ -122,6 +122,3 @@ npm run build
 - **Normalize free-text market fields** (country, segment) against a controlled vocabulary at ingestion, rather than cleaning up variants after the fact.
 - **Schedule recurring re-verification** for the 44% of the catalog untouched in 2+ years, weighted toward the lowest-completeness markets first.
 
-## License
-
-Add a license of your choice (e.g. MIT) if you'd like this repo to be reusable by others.
