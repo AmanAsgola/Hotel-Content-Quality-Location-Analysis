@@ -41,6 +41,9 @@ Full breakdowns by field, market, segment, and city are in the dashboard and wor
 ├── content_quality_kpis.sql             # Completeness KPIs, duplicate & anomaly detection (SQL)
 ├── content_quality_analysis.py          # Fuzzy duplicate matching, anomaly rules, geo outliers (pandas)
 ├── Hotel_Content_Quality_Dashboard.jsx  # Interactive filterable dashboard (React + Recharts)
+├── frontend/                            # Vite React app to run/build/host the dashboard
+├── netlify.toml                         # Netlify deploy configuration (frontend as base)
+├── vercel.json                          # Vercel deploy configuration
 ├── Hotel_Content_Quality_KPIs.xlsx      # KPI summary workbook (live formulas)
 └── README.md
 ```
@@ -96,11 +99,20 @@ print(pd.read_sql(open('content_quality_kpis.sql').read().split(';')[0], conn))
 
 # Full pandas analysis (missingness, duplicates, anomalies, geo outliers)
 python3 content_quality_analysis.py
+
+# Dashboard app (React + Recharts)
+cd frontend
+npm install
+npm run dev
+npm run build
 ```
 
-**Viewing the dashboard:** it's a self-contained React component (`recharts` + inline styles, no external CSS). Two options:
-- Paste it into [claude.ai](https://claude.ai) as an artifact — it renders immediately.
-- Drop it into any React project with `react` and `recharts` installed and render `<Dashboard />`.
+**Viewing the dashboard:** the app is scaffolded in `/frontend` and renders the root-level `Hotel_Content_Quality_Dashboard.jsx` as the source component.
+
+**Deploying the dashboard:**
+- **Netlify:** connect this repo; `netlify.toml` is ready and builds from `frontend`.
+- **Vercel:** connect this repo; `vercel.json` is ready and builds from `frontend`.
+- **GitHub Pages:** run `npm run build` in `frontend` and publish `frontend/dist`.
 
 ## Improvement Opportunities
 
