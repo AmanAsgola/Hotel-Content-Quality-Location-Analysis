@@ -124,3 +124,5 @@ npm run build
 - **Add ingestion-time validation** to reject `last_updated` dates outside a sane rolling window — this is currently the single largest anomaly category.
 - **Normalize free-text market fields** (country, segment) against a controlled vocabulary at ingestion, rather than cleaning up variants after the fact.
 - **Schedule recurring re-verification** for the 44% of the catalog untouched in 2+ years, weighted toward the lowest-completeness markets first.
+## Working Link
+[## Improvement Opportunities](https://amanasgola.github.io/Hotel-Content-Quality-Location-Analysis/)
