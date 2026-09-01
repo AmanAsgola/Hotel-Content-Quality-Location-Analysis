@@ -112,7 +112,10 @@ npm run build
 **Deploying the dashboard:**
 - **Netlify:** connect this repo; `netlify.toml` is ready and builds from `frontend`.
 - **Vercel:** connect this repo; `vercel.json` is ready and builds from `frontend`.
-- **GitHub Pages:** run `npm run build` in `frontend` and publish `frontend/dist`.
+- **GitHub Pages:** this repo includes `.github/workflows/deploy-github-pages.yml` for automatic deploys from `main`/`master`.
+  1. In GitHub, go to **Settings → Pages**.
+  2. Set **Source** to **GitHub Actions**.
+  3. Push to `main` or run **Deploy dashboard to GitHub Pages** manually from the Actions tab.
 
 ## Improvement Opportunities
 
@@ -121,4 +124,3 @@ npm run build
 - **Add ingestion-time validation** to reject `last_updated` dates outside a sane rolling window — this is currently the single largest anomaly category.
 - **Normalize free-text market fields** (country, segment) against a controlled vocabulary at ingestion, rather than cleaning up variants after the fact.
 - **Schedule recurring re-verification** for the 44% of the catalog untouched in 2+ years, weighted toward the lowest-completeness markets first.
-

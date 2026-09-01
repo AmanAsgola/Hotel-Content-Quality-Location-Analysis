@@ -3,9 +3,12 @@ import { defineConfig } from 'vite'
 import { resolve } from 'node:path'
 
 const frontendDir = import.meta.dirname
+const repository = process.env.GITHUB_REPOSITORY
+const pagesBase = repository ? `/${repository.split('/')[1]}/` : '/'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: pagesBase,
   plugins: [react()],
   resolve: {
     alias: {
